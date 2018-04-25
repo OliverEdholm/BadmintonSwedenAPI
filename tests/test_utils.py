@@ -1,5 +1,5 @@
 # imports
-from utils import get_soup
+from ..utils import get_soup
 
 
 def test_get_soup():
