@@ -1,3 +1,4 @@
 [
+  "tests/test_config.py::test_url_home",
   "tests/test_utils.py::test_get_soup"
 ]

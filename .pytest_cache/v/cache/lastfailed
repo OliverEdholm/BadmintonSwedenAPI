@@ -1,1 +1,3 @@
-{}
+{
+  "tests/test_config.py::test_url_home": true
+}
