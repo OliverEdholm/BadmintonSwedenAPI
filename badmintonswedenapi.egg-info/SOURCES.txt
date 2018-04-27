@@ -1,0 +1,8 @@
+setup.py
+badmintonswedenapi/__init__.py
+badmintonswedenapi/player_search.py
+badmintonswedenapi/utils.py
+badmintonswedenapi.egg-info/PKG-INFO
+badmintonswedenapi.egg-info/SOURCES.txt
+badmintonswedenapi.egg-info/dependency_links.txt
+badmintonswedenapi.egg-info/top_level.txt

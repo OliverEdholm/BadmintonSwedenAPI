@@ -7,6 +7,9 @@ name = "pypi"
 requests = "*"
 pytest = "*"
 "beautifulsoup4" = "*"
+ipython = "*"
+ipdb = "*"
+pytest-mock = "*"
 
 [dev-packages]
 

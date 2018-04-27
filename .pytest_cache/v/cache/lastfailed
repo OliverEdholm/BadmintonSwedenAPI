@@ -1,3 +1,10 @@
 {
-  "tests/test_config.py::test_url_home": true
+  "tests/test_config.py::test_url_home": true,
+  "tests/test_player.py::test_get_tournaments": true,
+  "tests/unit_tests/test_player.py::test_get_tournaments": true,
+  "tests/unit_tests/test_player_search.py::test_search_player[Oliver Edholm-tests/unittests/mocks/player_search/oliver.html-http://badmintonsweden.tournamentsoftware.com/find/player?q=Oliver Edholm-expected0]": true,
+  "tests/unit_tests/test_player_search.py::test_search_player[Teodor Atterstr\\xf6m-tests/unittests/mocks/player_search/teodor.html-http://badmintonsweden.tournamentsoftware.com/find/player?q=Teodor Atterstr\\xf6m-expected1]": true,
+  "tests/unittests/test_player_search.py::test_search_player[Oliver Edholm-tests/unittests/mocks/player_search_oliver-expected0]": true,
+  "tests/unittests/test_player_search.py::test_search_player[Teodor Atterstr\\xf6m-tests/unittests/mocks/player_search/teodor.html-http://badmintonsweden.tournamentsoftware.com/find/player?q=Teodor Aterstr\\xf6m-expected1]": true,
+  "tests/unittests/test_player_search.py::test_search_player[Teodor Atterstr\\xf6m-tests/unittests/mocks/player_search_oliver-expected1]": true
 }

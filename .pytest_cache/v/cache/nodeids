@@ -1,4 +1,6 @@
 [
-  "tests/test_config.py::test_url_home",
-  "tests/test_utils.py::test_get_soup"
+  "tests/unit_tests/test_player.py::test_get_tournaments",
+  "tests/unit_tests/test_player_search.py::test_search_player[Oliver Edholm-tests/unit_tests/mocks/player_search/oliver.html-http://badmintonsweden.tournamentsoftware.com/find/player?q=Oliver Edholm-expected0]",
+  "tests/unit_tests/test_player_search.py::test_search_player[Teodor Atterstr\\xf6m-tests/unit_tests/mocks/player_search/teodor.html-http://badmintonsweden.tournamentsoftware.com/find/player?q=Teodor Atterstr\\xf6m-expected1]",
+  "tests/unit_tests/test_utils.py::test_get_soup"
 ]
