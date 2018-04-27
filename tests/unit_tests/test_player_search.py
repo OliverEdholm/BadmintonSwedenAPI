@@ -7,7 +7,8 @@ import pytest
 
 
 # tests
-@pytest.mark.parametrize('query, mock_path, expected_url, expected', [
+@pytest.mark.parametrize('query, mock_path, expected_url, expected',
+[
     (
         'Oliver Edholm',
         'tests/unit_tests/mocks/player_search/oliver.html',
@@ -38,7 +39,9 @@ def test_search_player(query, mock_path, expected_url, expected, mocker):
         if value == expected_url:
             return ResponseMock(mock_path)
         else:
-            raise Exception('Invalid URL: {}'.format(value))
+            raise Exception('Invalid URL: {value}, expected: '
+                            '{expected_url}'.format(value=value,
+                                                    expected=expected_url))
 
     mocker.patch(
         'requests.get',
