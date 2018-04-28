@@ -1,5 +1,6 @@
 [
-  "tests/unit_tests/test_player.py::test_get_tournaments",
+  "tests/unit_tests/test_player.py::test_get_non_played_tournaments[http://badmintonsweden.tournamentsoftware.com/player/3C3E88CA-FA0B-43B0-81E3-C5A8BC84F0EF/IID01442289/-date0-mock_paths0-expected_urls0-expected0]",
+  "tests/unit_tests/test_player.py::test_get_non_played_tournaments[http://badmintonsweden.tournamentsoftware.com/player/3C3E88CA-FA0B-43B0-81E3-C5A8BC84F0EF/IID00876487/-date1-mock_paths1-expected_urls1-expected1]",
   "tests/unit_tests/test_player_search.py::test_search_player[Oliver Edholm-tests/unit_tests/mocks/player_search/oliver.html-http://badmintonsweden.tournamentsoftware.com/find/player?q=Oliver Edholm-expected0]",
   "tests/unit_tests/test_player_search.py::test_search_player[Teodor Atterstr\\xf6m-tests/unit_tests/mocks/player_search/teodor.html-http://badmintonsweden.tournamentsoftware.com/find/player?q=Teodor Atterstr\\xf6m-expected1]",
   "tests/unit_tests/test_utils.py::test_get_soup"
