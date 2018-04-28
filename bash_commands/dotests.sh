@@ -1,2 +1,2 @@
 python setup.py install
-pytest -vv
+pytest tests/unit_tests -vv 

@@ -32,6 +32,12 @@ import pytest
                 'iid': 'IID01442289'
             }
         ]
+    ),
+    (
+        't',
+        'tests/unit_tests/mocks/player_search/teodor.html',
+        'http://badmintonsweden.tournamentsoftware.com/find/player?q=t',  # NOQA
+        None  # when query is shorter than 2 characters it should return None
     )
 ])
 def test_search_player(query, mock_path, expected_url, expected, mocker):

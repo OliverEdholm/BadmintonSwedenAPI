@@ -15,6 +15,9 @@ config.read('config.ini')
 def search_player(query):
     logger.info('getting players that match query: {}'.format(query))
 
+    if len(query) < 2:
+        return None
+
     url = config['urls']['player_search_url'].format(
         query=query
     )

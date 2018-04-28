@@ -13,7 +13,10 @@ config.read('config.ini')
 
 # functions
 def search_player(query):
-    logger.debug('getting players that match query: {}'.format(query))
+    logger.info('getting players that match query: {}'.format(query))
+
+    if len(query) < 2:
+        return None
 
     url = config['urls']['player_search_url'].format(
         query=query

@@ -69,7 +69,12 @@ def get_non_played_tournaments(player_url):
             url = config['urls']['main'] + extension[1:]
 
             time_tags = div.findAll('time')
+
+            if len(time_tags) == 0:
+                continue
+
             start_date = maya.parse(time_tags[0].text)
+
             if len(time_tags) == 1:
                 end_date = start_date
             else:
@@ -96,8 +101,8 @@ def get_non_played_tournaments(player_url):
 
         return non_played_tournaments
 
-    logger.debug('getting non played tournaments from '
-                 'player with url: {}'.format(player_url))
+    logger.info('getting non played tournaments from '
+                'player with url: {}'.format(player_url))
 
     current_date = maya.now()
     current_year = current_date.year
