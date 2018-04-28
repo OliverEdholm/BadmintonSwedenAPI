@@ -1,15 +1,20 @@
 # imports
 from .utils import get_soup
 
+import logging
 import configparser
 
 # setup
+logger = logging.getLogger('badmintonswedenapi')
+
 config = configparser.ConfigParser()
 config.read('config.ini')
 
 
 # functions
 def search_player(query):
+    logger.debug('getting players that match query: {}'.format(query))
+
     url = config['urls']['player_search_url'].format(
         query=query
     )

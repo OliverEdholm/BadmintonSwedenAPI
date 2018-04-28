@@ -2,11 +2,14 @@
 from .utils import get_soup
 
 import os
+import logging
 import configparser
 
 import maya
 
 # setup
+logger = logging.getLogger('badmintonswedenapi')
+
 config = configparser.ConfigParser()
 config.read('config.ini')
 
@@ -92,6 +95,9 @@ def get_non_played_tournaments(player_url):
                 non_played_tournaments.append(tournament)
 
         return non_played_tournaments
+
+    logger.debug('getting non played tournaments from '
+                 'player with url: {}'.format(player_url))
 
     current_date = maya.now()
     current_year = current_date.year
