@@ -1,5 +1,5 @@
 # imports
-from badmintonswedenapi.player_search import search_player
+from badmintonswedenapi.search import search_player
 
 import pytest
 

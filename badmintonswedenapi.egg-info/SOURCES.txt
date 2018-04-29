@@ -1,7 +1,8 @@
 setup.py
 badmintonswedenapi/__init__.py
 badmintonswedenapi/player.py
-badmintonswedenapi/player_search.py
+badmintonswedenapi/search.py
+badmintonswedenapi/tournament.py
 badmintonswedenapi/utils.py
 badmintonswedenapi.egg-info/PKG-INFO
 badmintonswedenapi.egg-info/SOURCES.txt

@@ -1,5 +1,6 @@
 # imports
 from .utils import get_soup
+from .player import Player
 
 import logging
 import configparser
@@ -35,12 +36,8 @@ def search_player(query):
         url = config['urls']['main'] + a_tag['href'][1:-4]
         iid = h4_tag.span.text[2:-1]
 
-        data = {
-            'name': name,
-            'url': url,
-            'iid': iid
-        }
+        player = Player(name, url, iid)
 
-        player_data.append(data)
+        player_data.append(player)
 
     return player_data

@@ -1,6 +1,5 @@
 # imports
-from badmintonswedenapi.player_search import search_player
-from badmintonswedenapi.player import get_non_played_tournaments
+from badmintonswedenapi.search import search_player
 
 import pytest
 
@@ -15,6 +14,6 @@ def test_player_pursual(query):
     players = search_player(query)
     player = players[0]
 
-    non_played_tournaments = get_non_played_tournaments(player['url'])
+    non_played_tournaments = player.get_non_played_tournaments()
 
     assert non_played_tournaments is not None
