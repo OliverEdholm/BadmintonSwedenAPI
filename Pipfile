@@ -11,6 +11,8 @@ ipython = "*"
 ipdb = "*"
 pytest-mock = "*"
 maya = "*"
+mock = "*"
+faker = "*"
 
 [dev-packages]
 

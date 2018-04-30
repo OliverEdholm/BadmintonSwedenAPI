@@ -1,7 +1,8 @@
 # imports
 from utils import ResponseMock
+from utils import get_player_mock
+from utils import is_mock_values_equals
 
-from badmintonswedenapi.player import Player
 from badmintonswedenapi.search import search_player
 
 import pytest
@@ -15,7 +16,7 @@ import pytest
         'tests/unit_tests/mocks/player_search/oliver.html',
         'http://badmintonsweden.tournamentsoftware.com/find/player?q=Oliver Edholm',  # NOQA
         [
-            Player(
+            get_player_mock(
                 name='Oliver Edholm',
                 url='http://badmintonsweden.tournamentsoftware.com/player/3C3E88CA-FA0B-43B0-81E3-C5A8BC84F0EF/IID00792657/',  # NOQA
                 iid='IID00792657'
@@ -27,7 +28,7 @@ import pytest
         'tests/unit_tests/mocks/player_search/teodor.html',
         'http://badmintonsweden.tournamentsoftware.com/find/player?q=Teodor Atterström',  # NOQA
         [
-            Player(
+            get_player_mock(
                 name='Teodor Atterström',
                 url='http://badmintonsweden.tournamentsoftware.com/player/3C3E88CA-FA0B-43B0-81E3-C5A8BC84F0EF/IID01442289/',  # NOQA
                 iid='IID01442289'
@@ -57,4 +58,4 @@ def test_search_player(query, mock_path, expected_url, expected, mocker):
 
     results = search_player(query)
 
-    assert results == expected
+    assert is_mock_values_equals(expected, results) is True

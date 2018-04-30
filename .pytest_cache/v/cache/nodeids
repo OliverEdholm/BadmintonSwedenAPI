@@ -1,19 +1,10 @@
 [
-  "tests/integration_tests/test_player_pursual.py::test_player_pursual[Oliver]",
-  "tests/integration_tests/test_player_pursual.py::test_player_pursual[Jacob]",
-  "tests/integration_tests/test_player_pursual.py::test_player_pursual[Sara]",
   "tests/unit_tests/test_player.py::test_player",
-  "tests/unit_tests/test_player.py::test_get_non_played_tournaments[player0-date0-mock_paths0-expected_urls0-expected0]",
-  "tests/unit_tests/test_player.py::test_get_non_played_tournaments[player1-date1-mock_paths1-expected_urls1-expected1]",
+  "tests/unit_tests/test_player.py::test_player_get_non_played_tournaments[player_data0-date0-mock_paths0-expected_urls0-expected0]",
+  "tests/unit_tests/test_player.py::test_player_get_non_played_tournaments[player_data1-date1-mock_paths1-expected_urls1-expected1]",
   "tests/unit_tests/test_search.py::test_search_player[Oliver Edholm-tests/unit_tests/mocks/player_search/oliver.html-http://badmintonsweden.tournamentsoftware.com/find/player?q=Oliver Edholm-expected0]",
   "tests/unit_tests/test_search.py::test_search_player[Teodor Atterstr\\xf6m-tests/unit_tests/mocks/player_search/teodor.html-http://badmintonsweden.tournamentsoftware.com/find/player?q=Teodor Atterstr\\xf6m-expected1]",
   "tests/unit_tests/test_search.py::test_search_player[t-tests/unit_tests/mocks/player_search/teodor.html-http://badmintonsweden.tournamentsoftware.com/find/player?q=t-None]",
   "tests/unit_tests/test_tournament.py::test_tournament",
-  "tests/unit_tests/test_utils.py::test_get_soup",
-  "tests/website_tests/test_player.py::test_search_player[player0]",
-  "tests/website_tests/test_player.py::test_search_player[player1]",
-  "tests/website_tests/test_search.py::test_search_player[wqfgoqwdgdfgdfg]",
-  "tests/website_tests/test_search.py::test_search_player[\\xc5berg]",
-  "tests/website_tests/test_search.py::test_search_player[Teodor Atterstr\\xf6m]",
-  "tests/website_tests/test_search.py::test_search_player[Klara Blomquist]"
+  "tests/unit_tests/test_utils.py::test_get_soup"
 ]

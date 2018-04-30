@@ -17,7 +17,7 @@ config.read('config.ini')
 
 # classes
 class Player(object):
-    def __init__(self, name, url, iid):
+    def __init__(self, name=None, url=None, iid=None):
         self.name = name
         self.url = url
         self.iid = iid
