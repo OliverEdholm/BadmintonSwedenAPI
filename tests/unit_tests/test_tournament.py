@@ -68,40 +68,30 @@ class TestTournament(object):
         # men singles
         to_test.append(matches[8])
         mocks.append(get_match_mock(
-            discipline='MS',
-            category='Elit',
             scheduled_time=maya.parse('2018-04-28 9:30'),
             team1_players=[get_player_mock(name='Simon Sandholm')],
             team2_players=[get_player_mock(name='Emil Johansson')],
             team1_seed='',
             team2_seed='',
             score=get_score_mock(sets=[(21, 16), (21, 11)]),
-            duration='0:36',
-            is_team1_winner=True,
             is_played=True
         ))
 
         # women singles
         to_test.append(matches[19])
         mocks.append(get_match_mock(
-            discipline='WS',
-            category='Elit',
             scheduled_time=maya.parse('2018-04-28 10:00'),
             team1_players=[get_player_mock(name='Jennie Carlsson')],
             team2_players=[get_player_mock(name='Lovisa Johansson')],
             team1_seed='',
             team2_seed='',
             score=get_score_mock(sets=[(21, 17), (21, 14)]),
-            duration='0:33',
-            is_team1_winner=True,
             is_played=True
         ))
 
         # men doubles
         to_test.append(matches[25])
         mocks.append(get_match_mock(
-            discipline='MD',
-            category='Elit',
             scheduled_time=maya.parse('2018-04-28 10:00'),
             team1_players=[
                 get_player_mock(name='Mattias Borg'),
@@ -114,16 +104,12 @@ class TestTournament(object):
             team1_seed='',
             team2_seed='',
             score=get_score_mock(sets=[(21, 8), (21, 18)]),
-            duration='0:37',
-            is_team1_winner=True,
             is_played=True
         ))
 
         # women doubles
         to_test.append(matches[31])
         mocks.append(get_match_mock(
-            discipline='WD',
-            category='Elit',
             scheduled_time=maya.parse('2018-04-28 10:30'),
             team1_players=[
                 get_player_mock(name='Lydia Demetriades'),
@@ -133,11 +119,9 @@ class TestTournament(object):
                 get_player_mock(name='Madeleine Persson'),
                 get_player_mock(name='Stina Runesson')
             ],
+            score=get_score_mock(sets=[(21, 14), (21, 13)]),
             team1_seed='',
             team2_seed='',
-            score=get_score_mock(sets=[(21, 14), (21, 13)]),
-            duration='0:29',
-            is_team1_winner=True,
             is_played=True
         ))
 
@@ -145,8 +129,6 @@ class TestTournament(object):
         # first match
         to_test.append(matches[0])
         mocks.append(get_match_mock(
-            discipline='XD',
-            category='Elit',
             scheduled_time=maya.parse('2018-04-28 9:00'),
             team1_players=[
                 get_player_mock(name='Marcus Jansson'),
@@ -159,16 +141,12 @@ class TestTournament(object):
             team1_seed='',
             team2_seed='',
             score=get_score_mock(sets=[(21, 14), (21, 19)]),
-            duration='0:50',
-            is_team1_winner=True,
             is_played=True
         ))
 
         # walkover
         to_test.append(matches[32])
         mocks.append(get_match_mock(
-            discipline='WD',
-            category='Elit',
             scheduled_time=maya.parse('2018-04-28 10:30'),
             team1_players=[
                 get_player_mock(name='Salisa Chayruksa'),
@@ -181,16 +159,12 @@ class TestTournament(object):
             team1_seed='',
             team2_seed='',
             score=get_score_mock(sets=[], is_walkover=True),
-            duration='',
-            is_team1_winner=True,
             is_played=True
         ))
 
         # injury during match
         to_test.append(matches[45])
         mocks.append(get_match_mock(
-            discipline='MS',
-            category='Elit',
             scheduled_time=maya.parse('2018-04-28 11:30'),
             team1_players=[
                 get_player_mock(name='Nils Ihse'),
@@ -201,16 +175,12 @@ class TestTournament(object):
             team1_seed='',
             team2_seed='',
             score=get_score_mock(sets=[(21, 17), (9, 2)], is_walkover=False),
-            duration='0:23',
-            is_team1_winner=True,
             is_played=True
         ))
 
         # match with seeded player
         to_test.append(matches[38])
         mocks.append(get_match_mock(
-            discipline='MS',
-            category='Elit',
             scheduled_time=maya.parse('2018-04-28 11:00'),
             team1_players=[
                 get_player_mock(name='Andy Tsai'),
@@ -221,16 +191,12 @@ class TestTournament(object):
             team1_seed='1',
             team2_seed='',
             score=get_score_mock(sets=[(21, 15), (21, 9)]),
-            duration='0:36',
-            is_team1_winner=True,
             is_played=True
         ))
 
         # last match
         to_test.append(matches[-1])
         mocks.append(get_match_mock(
-            discipline='WD',
-            category='Elit',
             scheduled_time=maya.parse('2018-04-29 14:00'),
             team1_players=[
                 get_player_mock(name='Berfin Aslan'),
@@ -243,16 +209,12 @@ class TestTournament(object):
             team1_seed='1',
             team2_seed='2',
             score=get_score_mock(sets=[(21, 17), (21, 16)]),
-            duration='',
-            is_team1_winner=True,
             is_played=True
         ))
 
         # a match
         to_test.append(matches[62])
         mocks.append(get_match_mock(
-            discipline='MS',
-            category='A',
             scheduled_time=maya.parse('2018-04-28 12:00'),
             team1_players=[
                 get_player_mock(name='Calle Badenfors'),
@@ -263,8 +225,6 @@ class TestTournament(object):
             team1_seed='1',
             team2_seed='',
             score=get_score_mock(sets=[(21, 12), (21, 15)]),
-            duration='0:28',
-            is_team1_winner=True,
             is_played=True
         ))
 
@@ -303,16 +263,60 @@ class TestTournament(object):
         # men singles
         to_test.append(matches[0])
         mocks.append(get_match_mock(
-            discipline='MS',
-            category='U11',
             scheduled_time=maya.parse('2018-05-05 9:00'),
             team1_players=[get_player_mock(name='Leo Hyltner')],
             team2_players=[get_player_mock(name='Mike Dong')],
             team1_seed='',
             team2_seed='',
             score=get_score_mock(sets=[]),
-            duration='',
-            is_team1_winner=True,   # doesn't really matter
+            is_played=False
+        ))
+
+        assert_mocks_equals_objects(mocks, to_test)
+
+    def test_get_all_matches_international(self, mocker):
+        mocker.patch(
+            'requests.get',
+            return_value=ResponseMock(
+                'tests/unit_tests/mocks/tournament/international.html')
+        )
+
+        tournament = self.get_example_tournament(
+            name='Gothenburg Open 2018',
+            url='http://badmintonsweden.tournamentsoftware.com/sport/tournament.aspx?id=55DA6622-FF9B-4E89-ADC4-13FCF07A839C',  # NOQA
+            start_date=maya.parse('2018-05-11'),
+            end_date=maya.parse('2018-05-13'),
+        )
+
+        matches = tournament.get_all_matches()
+
+        mocks = []
+        to_test = []
+
+        # men singles
+        to_test.append(matches[0])
+        mocks.append(get_match_mock(
+            scheduled_time=maya.parse('2018-05-11 12:00'),
+            team1_players=[get_player_mock(name='Viktor Chen'),
+                           get_player_mock(name='Irma Hansson')],
+            team2_players=[get_player_mock(name='Ludvig Edholm'),
+                           get_player_mock(name='Greta Ribokas')],
+            team1_seed='',
+            team2_seed='',
+            score=get_score_mock(sets=[]),
+            is_played=False
+        ))
+
+        to_test.append(matches[2])
+        mocks.append(get_match_mock(
+            scheduled_time=maya.parse('2018-05-11 12:00'),
+            team1_players=[get_player_mock(name='Rasmus Gross'),
+                           get_player_mock(name='Hanna Malm')],
+            team2_players=[get_player_mock(name='Olliver Kauffman'),
+                           get_player_mock(name='Amalie Kjalke')],
+            team1_seed='',
+            team2_seed='',
+            score=get_score_mock(sets=[]),
             is_played=False
         ))
 

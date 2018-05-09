@@ -29,16 +29,15 @@ def assert_mocks_equals_objects(mocks, reals):
         return inp
 
     if mocks is None and reals is None:
-        return True
+        return
 
     if mocks is None and reals is not None:
-        return False
+        return
 
     if mocks is not None and reals is None:
-        return False
+        return
 
-    if len(mocks) != len(reals):
-        return False
+    assert len(mocks) == len(reals)
 
     for mock, real in zip(mocks, reals):
         mock = elongate(mock)
@@ -113,21 +112,15 @@ def get_player_mock(
 
 
 def get_match_mock(
-    discipline=None,
-    category=None,
     scheduled_time=None,
     team1_players=None,
     team2_players=None,
     team1_seed=None,
     team2_seed=None,
     score=None,
-    duration=None,
-    is_team1_winner=None,
     is_played=None
 ):
     match = MagicMock(spec=Match)
-    match.discipline = _param_or_own(discipline, 'MS')
-    match.category = _param_or_own(category, 'Elit')
     match.scheduled_time = _param_or_own(
         scheduled_time, maya.parse('2018-04-28 9:00'))
     match.team1_players = _param_or_own(
@@ -137,8 +130,6 @@ def get_match_mock(
     match.team1_seed = _param_or_own(team1_seed, '1')
     match.team2_seed = _param_or_own(team2_seed, '3/4')
     match.score = _param_or_own(score, get_score_mock())
-    match.duration = _param_or_own(duration, '0:46')
-    match.is_team1_winner = _param_or_own(is_team1_winner, False)
     match.is_played = _param_or_own(is_played, True)
 
     return match

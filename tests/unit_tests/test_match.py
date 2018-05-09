@@ -33,8 +33,6 @@ class TestScore(object):
 class TestMatch(object):
     def get_example_match(
         self,
-        discipline='MS',
-        category='Elit',
         scheduled_time=maya.parse('2018-04-28 9:00'),
         team1_players=[
             get_player_mock()
@@ -45,21 +43,15 @@ class TestMatch(object):
         team1_seed='1',
         team2_seed='3/4',
         score=get_score_mock(),
-        duration='0:46',
-        is_team1_winner=False,
         is_played=True
     ):
         match = Match(
-            discipline=discipline,
-            category=category,
             scheduled_time=scheduled_time,
             team1_players=team1_players,
             team2_players=team2_players,
             team1_seed=team1_seed,
             team2_seed=team2_seed,
             score=score,
-            duration=duration,
-            is_team1_winner=is_team1_winner,
             is_played=is_played
         )
 

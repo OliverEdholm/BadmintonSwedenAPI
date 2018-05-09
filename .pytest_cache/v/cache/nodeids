@@ -10,5 +10,6 @@
   "tests/unit_tests/test_tournament.py::TestTournament::()::test_init",
   "tests/unit_tests/test_tournament.py::TestTournament::()::test_get_all_matches",
   "tests/unit_tests/test_tournament.py::TestTournament::()::test_get_all_matches_non_played",
+  "tests/unit_tests/test_tournament.py::TestTournament::()::test_get_all_matches_international",
   "tests/unit_tests/test_utils.py::test_get_soup"
 ]

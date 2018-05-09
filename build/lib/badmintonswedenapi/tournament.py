@@ -67,36 +67,6 @@ class Tournament(object):
             return match_tags
 
         def get_match(match_tag, date):
-            def get_discipline():
-                discipline_in_swedish = match_tag.findAll(
-                    'a')[0].text.split(' ')[0].lower()
-
-                translations = {
-                    'hs': 'MS',
-                    'ds': 'WS',
-                    'hd': 'MD',
-                    'dd': 'WD',
-                    'md': 'XD',
-                    'herrsingel': 'MS',
-                    'damsingel': 'WS',
-                    'herrdubbel': 'MD',
-                    'damdubbel': 'WD',
-                    'mixed': 'XD',
-                    'mixeddubbel': 'XD',
-                }
-
-                return translations.get(discipline_in_swedish,
-                                        discipline_in_swedish)
-
-            def get_category():
-                texts = match_tag.findAll(
-                    'a')[0].text.split(' ')
-
-                if len(texts) == 1:
-                    return ''
-                else:
-                    return texts[1]
-
             def get_scheduled_time():
                 time_text = match_tag.findAll(
                     'td', {'class': 'plannedtime'})[0].text
@@ -114,13 +84,23 @@ class Tournament(object):
 
                 tr_tags = match_tag.findAll('tr')
                 for tag in tr_tags:
-                    name = tag.a.text.split(' [')[0]
-                    player = Player(name=name)
+                    a_tags = tag.findAll('a')
 
-                    if len(tag.findAll('td', {'align': 'right'})) == 1:
-                        team1_players.append(player)
+                    for a_tag in a_tags:
+                        text = a_tag.text.split(' [')[0]
+                        if '[' not in text:
+                            name = text
+                            break
                     else:
-                        team2_players.append(player)
+                        continue
+
+                    if '[' not in name:
+                        player = Player(name=name)
+
+                        if len(tag.findAll('td', {'align': 'right'})) == 1:
+                            team1_players.append(player)
+                        else:
+                            team2_players.append(player)
 
                 return team1_players, team2_players
 
@@ -173,25 +153,10 @@ class Tournament(object):
 
                 return score
 
-            def get_duration():
-                duration_tag = match_tag.findAll('td', {'align': 'right'})[-1]
-
-                if len(duration_tag.findAll('a')) != 0:
-                    return ''
-                else:
-                    return duration_tag.text
-
-            def get_is_team1_winner():
-                return True
-
             def get_is_played(score):
                 is_not_played = score.sets == [] and not score.is_walkover
 
                 return not is_not_played
-
-            discipline = get_discipline()
-
-            category = get_category()
 
             scheduled_time = get_scheduled_time()
 
@@ -201,23 +166,15 @@ class Tournament(object):
 
             score = get_score()
 
-            duration = get_duration()
-
-            is_team1_winner = get_is_team1_winner()
-
             is_played = get_is_played(score)
 
             return Match(
-                discipline=discipline,
-                category=category,
                 scheduled_time=scheduled_time,
                 team1_players=team1_players,
                 team2_players=team2_players,
                 team1_seed=team1_seed,
                 team2_seed=team2_seed,
                 score=score,
-                duration=duration,
-                is_team1_winner=is_team1_winner,
                 is_played=is_played
             )
 
@@ -226,7 +183,6 @@ class Tournament(object):
 
         urls, dates = get_match_page_urls()
 
-        index = 1
         matches = []
         for url, date in zip(urls, dates):
             soup = get_soup(url)
@@ -236,7 +192,6 @@ class Tournament(object):
                 match = get_match(tag, date)
 
                 matches.append(match)
-                index += 1
 
         return matches
 
