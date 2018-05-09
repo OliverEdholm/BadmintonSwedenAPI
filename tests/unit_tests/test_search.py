@@ -1,7 +1,7 @@
 # imports
-from utils import ResponseMock
-from utils import get_player_mock
-from utils import is_mock_values_equals
+from .utils import ResponseMock
+from .utils import get_player_mock
+from .utils import assert_mocks_equals_objects
 
 from badmintonswedenapi.search import search_player
 
@@ -58,4 +58,5 @@ def test_search_player(query, mock_path, expected_url, expected, mocker):
 
     results = search_player(query)
 
-    assert is_mock_values_equals(expected, results) is True
+    # assert assert_mocks_equals_objects(expected, results) is True
+    assert_mocks_equals_objects(expected, results)

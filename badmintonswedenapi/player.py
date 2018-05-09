@@ -1,6 +1,5 @@
 # imports
 from .utils import get_soup
-from .tournament import Tournament
 
 import os
 import logging
@@ -23,6 +22,8 @@ class Player(object):
         self.iid = iid
 
     def get_non_played_tournaments(self):
+        from .tournament import Tournament
+
         def get_relevant_soups(current_year):
             def get_tournaments_soup(year):
                 tournament_year_query = config['url_querys']['tournament_year']

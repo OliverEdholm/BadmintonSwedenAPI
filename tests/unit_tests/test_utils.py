@@ -1,5 +1,5 @@
 # imports
-from utils import ResponseMock
+from .utils import ResponseMock
 
 from badmintonswedenapi.utils import get_soup
 
